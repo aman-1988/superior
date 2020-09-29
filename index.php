@@ -71,7 +71,7 @@ return $json_data_shopify;
  // $string2 = "color_black,size_l,size_m,material_65-35-poly-cotton-blend,size_xl,size_xxl";
  $string2 = $varientss;
 $str_arr = explode (",", $string2);  
-print_r($str_arr); 
+//print_r($str_arr); 
 foreach($str_arr as $key1 => $value1)
 {
  //  echo $str_arr[$key1]."<br>";
