@@ -146,7 +146,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
              if(count($result) >= count($str_arr)-1) {   print_r($result2); echo "<br>"; }
          } else if(count($str_arr) == count($result)) {
              print_r($result2); echo "<br>";
-         } else if(empty(count($result) && count($str_arr) == 2) {
+         } else if(count($result) == 1 && count($str_arr) == 2) {
              print_r($result2); echo "<br>";       
          }
           
