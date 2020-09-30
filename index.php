@@ -12,6 +12,7 @@ else
     $_POST['extra']='2.POST Request from demo.com';
   //  echo json_encode($_POST);
  $name = $_POST['name'];
+ $collpath = $_POST['collpath'];
  $varientss = $_POST['tags'];
     
    // echo $name." - ".$varientss; 
@@ -100,7 +101,7 @@ if(strpos($mystring3, $word3) !== false && strpos($mystring3, $word4) !== false)
 
      
      
-$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=10643603479&published_status=published&limit=250");
+$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
