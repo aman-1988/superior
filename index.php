@@ -83,12 +83,12 @@ foreach($str_arr as $key1 => $value1)
 //$tagnames = $_REQUEST['tagnames'];
 
 //if(!empty($tagnames)) {
-$word3 = "Dairy Free";
-$word4 = "Meat Dishes";
-$mystring3 = "Dairy Free, gluten free, Meat Dishes, No Added Sugar";
-if(strpos($mystring3, $word3) !== false && strpos($mystring3, $word4) !== false) {
+//$word3 = "Dairy Free";
+//$word4 = "Meat Dishes";
+//$mystring3 = "Dairy Free, gluten free, Meat Dishes, No Added Sugar";
+//if(strpos($mystring3, $word3) !== false && strpos($mystring3, $word4) !== false) {
     //echo "yes";
-}
+//}
 
 
 
@@ -121,6 +121,19 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $tagss1 = str_replace("/", "-",$tagss1);
          $str_arr2 = explode (",", $tagss1);  
          //print_r($str_arr2);
+      
+      $word3 = "RankGood";
+      $word4 = "RankBetter";
+      $word5 = "RankBest";
+      $mystring3 = $product_line_items[$keys3]['tags'];
+if(strpos($mystring3, $word3) !== false) {
+    $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
+} else if(strpos($mystring3, $word4) !== false) {
+    $labeltype = '<span style="text-indent:6px; line-height:20px; text-align: center;"class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>';
+} else if(strpos($mystring3, $word5) !== false) {
+    $labeltype = '<span style="text-indent:7px; line-height:20px; text-align: center;"class="variationBest"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Best</p></span>';
+}
+      
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
       
@@ -282,14 +295,14 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
 
 <div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price1.'" style="height:375px;">     
 <div class="prod-border"><div class="prod-container">
-<div class="prod-image"><a href="'.$collpath.'/'.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
+<div class="prod-image"><a href="'.$collpath.'/products/'.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
 
-<span style="text-indent:6px; line-height:20px; text-align: center;" class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>
+'.$labeltype.'
         
 </div></a></div>
 
 </div>
-<div class="product-info"><a href="'.$collpath.'/'.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
+<div class="product-info"><a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
 </div>
 
 </div>';
