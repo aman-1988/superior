@@ -307,18 +307,18 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
           
              
          if(count($str_arr) >= 6) {
-             if(count($result) >= count($str_arr)-3) {   print_r($result2); echo "<br>"; }
+             if(count($result) >= count($str_arr)-3) {   print_r($result2);  }
          }    
          else if(count($str_arr) == 5) {
-             if(count($result) >= count($str_arr)-2) {   print_r($result2); echo "<br>"; }
+             if(count($result) >= count($str_arr)-2) {   print_r($result2);  }
          }
          else if(count($str_arr) == 3 || count($str_arr) == 4)
          {
-             if(count($result) >= count($str_arr)-1) {   print_r($result2); echo "<br>"; }
+             if(count($result) >= count($str_arr)-1) {   print_r($result2);  }
          } else if(count($str_arr) == count($result)) {
-             print_r($result2); echo "<br>";
+             print_r($result2); 
          } else if(count($result) == 1 && count($str_arr) == 2) {
-             print_r($result2); echo "<br>";       
+             print_r($result2);      
          }
           
           
@@ -330,7 +330,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          }
          
          } else {
-             echo $result2;
+             print_r($result2);
              
          }
          
