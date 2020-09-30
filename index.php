@@ -125,6 +125,10 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       $word3 = "RankGood";
       $word4 = "RankBetter";
       $word5 = "RankBest";
+      
+      $word6 = "Free Freight";
+      $word7 = "Discounted Freight";
+      
       $mystring3 = $product_line_items[$keys3]['tags'];
 if(strpos($mystring3, $word3) !== false) {
     $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
@@ -132,6 +136,12 @@ if(strpos($mystring3, $word3) !== false) {
     $labeltype = '<span style="text-indent:6px; line-height:20px; text-align: center;"class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>';
 } else if(strpos($mystring3, $word5) !== false) {
     $labeltype = '<span style="text-indent:7px; line-height:20px; text-align: center;"class="variationBest"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Best</p></span>';
+}
+      
+if(strpos($mystring3, $word6) !== false) {
+ $labeltype2 = '<button class="button-free"><span class="badge-free-freight">Free Shipping!</span></button>';
+} else if(strpos($mystring3, $word7) !== false) {
+  $labeltype2 = '<button style="text-indent:5px;"class="button-discounted"><span class="badge-discounted-freight">Discounted Freight!</span></button>';
 }
       
          
@@ -295,7 +305,7 @@ if(strpos($mystring3, $word3) !== false) {
 
 <div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price1.'" style="height:375px;">     
 <div class="prod-border"><div class="prod-container">
-<div class="prod-image"><a href="'.$collpath.'/products/'.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
+<div class="prod-image"> '.$labeltype2.' <a href="'.$collpath.'/products/'.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
 
 '.$labeltype.'
         
