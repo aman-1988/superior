@@ -344,7 +344,7 @@ if(strpos($mystring3, $word6) !== false) {
         
          if(empty($result))
          {
-          echo "<p>Product Not Found</p>";
+         // echo "<p>Product Not Found</p>";
          }
         
         else if(!empty($result))
