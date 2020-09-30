@@ -89,6 +89,8 @@ foreach ($str_arrs_1 as $a) {
  $color_counts1 = $count_values['color'];
  $size_counts1 = $count_values['size'];
  $material_counts1 = $count_values['material'];
+ 
+ echo $color_counts1;
 
 
 //$tagnames = $_REQUEST['tagnames'];
