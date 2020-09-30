@@ -364,7 +364,7 @@ if(strpos($mystring3, $word6) !== false) {
          else if(count($str_arr) == 3 || count($str_arr) == 4)
          {
              if(count($result) >= count($str_arr)-1) {   print_r($result2);  } 
-          else if($color_counts1 >= 3 || $size_counts1 >= 3 || $material_counts1 >= 3) { print_r($result2); }
+          else if($color_counts1 >= 3 && count($result) >= 2   || $size_counts1 >= 3 && count($result) >= 2 || $material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
           else if($duplicates >= 1) { print_r($result2); }
          } else if(count($str_arr) == count($result)) {
              print_r($result2); 
