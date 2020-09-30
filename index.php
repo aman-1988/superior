@@ -330,7 +330,7 @@ if(strpos($mystring3, $word6) !== false) {
 
 </div>';
          
-      if(empty($varientss) {
+      if(empty($varientss)) {
         print_r($result2);
       }
        else if(!empty($str_arr)) {
