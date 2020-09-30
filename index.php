@@ -337,7 +337,13 @@ if(strpos($mystring3, $word6) !== false) {
              
          
          $result=array_intersect($str_arr2,$str_arr);
-         if(!empty($result))
+        
+         if(empty($result))
+         {
+          echo "<p>Product Not Found</p>";
+         }
+        
+        else if(!empty($result))
          {
           
           
@@ -364,10 +370,7 @@ if(strpos($mystring3, $word6) !== false) {
              print_r($result2);      
          } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
           
-         else if(empty($result))
-         {
-          echo "<p>Product Not Found</p>";
-         }
+         
           
           
           
