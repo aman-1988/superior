@@ -122,7 +122,177 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $str_arr2 = explode (",", $tagss1);  
          //print_r($str_arr2);
          
-          $result2 = $handle1. " - $".$price1." - ".$proimgs1;
+          //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
+      
+      $result2 = '<style>
+  .Retail {
+    color: #950c0c;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .normal-money {
+    color: #950c0c;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .money {
+  color: #950c0c;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .email {
+  color: #FFFFF;
+    font-size: 16px;
+    font-weight: bold;  
+  }
+  .button-free {
+   background-color: #950c0c;
+    opacity: 0.8;
+    padding: -32px 16px;
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    width: 97px;
+    height: 28px;
+    
+  }
+  
+   .button-free:hover {
+   background-color: #950c0c;
+    
+  }
+  
+   .button-free:active {
+   background-color: #950c0c;
+    
+  }
+  .badge-free-freight {
+     color: #FFFFF;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-left: -14px;
+    vertical-align: text-top;
+  }
+  
+  .button-discounted {
+   background-color: ##136FF3;
+    opacity: 0.8;
+    padding: -32px 16px;
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    width: 145px;
+    height: 28px;
+    
+  }
+  
+  .button-discounted: hover {
+   background: #136FF3;
+    opacity: 0.8;
+    padding: -32px 16px;
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    width: 145px;
+    height: 28px;
+    
+  }
+  
+  .badge-discounted-freight {
+     color: #FFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-left: -14px;
+    vertical-align: text-top;
+  }
+  .prod-border {
+    border: 5px solid #ccc;
+  }
+   .variation {
+   position: absolute;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #00000000;
+    border-radius: 2px;
+    bottom: -40px;
+    left: 10px;
+    background: #c46e39;
+    font-size: 10px;
+    z-index: 1;
+    display: flex;
+    top: 160px;
+    color: #EEEEEE;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-left:-7px;
+       box-shadow: 2px 4px #888888;
+
+  }
+.variationBetter {
+   position: absolute;
+    width: 60px;
+    height: 20px;
+    border: 2px solid #00000000;
+    border-radius: 2px;
+    bottom: -40px;
+    left: 10px;
+    background: #136FF3;
+    font-size: 10px;
+    z-index: 1;
+    display: flex;
+    top: 160px;
+    color: #EEEEEE;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-left:-7px;
+    box-shadow: 2px 4px #888888;
+
+
+  }
+ .variationBest {
+   position: absolute;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #00000000;
+    border-radius: 2px;
+    bottom: -40px;
+    left: 10px;
+    background: #09B63B;
+    font-size: 10px;
+    z-index: 1;
+    display: flex;
+    top: 160px;
+    color: #EEEEEE;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-left:-7px;
+     box-shadow: 2px 4px #888888;
+
+
+  }
+    
+  @media screen and (min-width: 980px) {
+    .prod-border {
+      min-height: 375px;
+    }
+  }
+</style>
+
+<div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].'" data-alpha="" data-price="'.$price1.'" style="height: 375px;">     
+<div class="prod-border"><div class="prod-container">
+<div class="prod-image"><a href="'.$collpath.''.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="$proimgs1" alt="'.$protitle2.'">
+
+<span style="text-indent:6px; line-height:20px; text-align: center;" class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>
+        
+</div></a></div>
+
+</div>
+<div class="product-info"><a href="'.$collpath.''.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
+</div>
+
+</div>';
          
          if(!empty($str_arr)) {
              
