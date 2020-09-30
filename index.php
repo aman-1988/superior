@@ -282,7 +282,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
 
 <div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].'" data-alpha="" data-price="'.$price1.'" style="height: 375px;">     
 <div class="prod-border"><div class="prod-container">
-<div class="prod-image"><a href="'.$collpath.''.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="$proimgs1" alt="'.$protitle2.'">
+<div class="prod-image"><a href="'.$collpath.''.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
 
 <span style="text-indent:6px; line-height:20px; text-align: center;" class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>
         
