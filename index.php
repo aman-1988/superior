@@ -90,7 +90,7 @@ foreach ($str_arrs_1 as $a) {
  $size_counts1 = $count_values['size'];
  $material_counts1 = $count_values['material'];
  
- echo $color_counts1;
+ //echo $color_counts1;
 
 
 //$tagnames = $_REQUEST['tagnames'];
@@ -359,7 +359,7 @@ if(strpos($mystring3, $word6) !== false) {
              print_r($result2);      
          } else if(count($result) == 1 && count($str_arr) == 2 && $material_counts1 == 2) {
              print_r($result2);      
-         } else { print_r($result2); }
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
           
           
           
