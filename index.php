@@ -90,6 +90,10 @@ foreach ($str_arrs_1 as $a) {
  $size_counts1 = $count_values['size'];
  $material_counts1 = $count_values['material'];
  
+
+$unique_colors = array_unique($str_arrs_1);
+$duplicates = count($str_arrs_1) - count($unique_colors);
+ 
  //echo $color_counts1;
 
 
@@ -362,11 +366,7 @@ if(strpos($mystring3, $word6) !== false) {
              if(count($result) >= count($str_arr)-1) {   print_r($result2);  }
          } else if(count($str_arr) == count($result)) {
              print_r($result2); 
-         } else if(count($result) == 1 && count($str_arr) == 2 && $color_counts1 == 2) {
-             print_r($result2);      
-         } else if(count($result) == 1 && count($str_arr) == 2 && $size_counts1 == 2) {
-             print_r($result2);      
-         } else if(count($result) == 1 && count($str_arr) == 2 && $material_counts1 == 2) {
+         } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
              print_r($result2);      
          } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
           
