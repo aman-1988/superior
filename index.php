@@ -330,7 +330,10 @@ if(strpos($mystring3, $word6) !== false) {
 
 </div>';
          
-         if(!empty($str_arr)) {
+      if(empty($varientss) {
+        print_r($result2);
+      }
+       else if(!empty($str_arr)) {
              
          
          $result=array_intersect($str_arr2,$str_arr);
