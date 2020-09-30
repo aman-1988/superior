@@ -78,6 +78,17 @@ foreach($str_arr as $key1 => $value1)
  //  echo $str_arr[$key1]."<br>";
 }
 
+ $str_arrs_1 = explode(",",str_replace("_", ",",$string2));
+ $count_values = array();
+foreach ($str_arrs_1 as $a) {
+
+     @$count_values[$a]++;
+
+}
+ 
+ $color_counts1 = $count_values['color'];
+ $size_counts1 = $count_values['size'];
+ $material_counts1 = $count_values['material'];
 
 
 //$tagnames = $_REQUEST['tagnames'];
@@ -340,9 +351,13 @@ if(strpos($mystring3, $word6) !== false) {
              if(count($result) >= count($str_arr)-1) {   print_r($result2);  }
          } else if(count($str_arr) == count($result)) {
              print_r($result2); 
-         } else if(count($result) == 1 && count($str_arr) == 2) {
+         } else if(count($result) == 1 && count($str_arr) == 2 && $color_counts1 == 2) {
              print_r($result2);      
-         }
+         } else if(count($result) == 1 && count($str_arr) == 2 && $size_counts1 == 2) {
+             print_r($result2);      
+         } else if(count($result) == 1 && count($str_arr) == 2 && $material_counts1 == 2) {
+             print_r($result2);      
+         } else { print_r($result2); }
           
           
           
