@@ -364,10 +364,10 @@ if(strpos($mystring3, $word6) !== false) {
          else if(count($str_arr) == 3 || count($str_arr) == 4)
          {
              if(count($result) >= count($str_arr)-1) {   print_r($result2);  } 
-             else if($color_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
-             else if($size_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
-             else if($material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
-             else if($duplicates >= 1) { print_r($result2); }
+             //else if($color_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
+             //else if($size_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
+             //else if($material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
+             else if($duplicates >= 1 && count($result) >= 2) { print_r($result2); }
          } else if(count($str_arr) == count($result)) {
              print_r($result2); 
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
