@@ -360,6 +360,7 @@ if(strpos($mystring3, $word6) !== false) {
          }    
          else if(count($str_arr) == 5) {
              if(count($result) >= count($str_arr)-2) {   print_r($result2);  }
+            else if($duplicates >= 1 && count($result) >= 2) { print_r($result2); }
          }
          else if(count($str_arr) == 3 || count($str_arr) == 4)
          {
