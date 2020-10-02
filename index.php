@@ -356,7 +356,9 @@ if(strpos($mystring3, $word6) !== false) {
           
              
          if(count($str_arr) >= 6) {
-             if(count($result) >= count($str_arr)-3) {   print_r($result2);  }
+             if(count($result) >= count($str_arr)-2) {   print_r($result2);  }
+            else if($duplicates >= 1 && count($result) >= 4) { print_r($result2); }
+            else if($duplicates >= 2 && count($result) >= 3) { print_r($result2);   }
          }    
          else if(count($str_arr) == 5) {
              if(count($result) >= count($str_arr)-1) {   print_r($result2);  }
