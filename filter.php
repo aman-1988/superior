@@ -145,7 +145,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
       if( $price_varient1 > 100000 && $product_type1 == 'Equipment') {
        
-       //$price2 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
+       $price2 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
       }
       
       
@@ -163,6 +163,9 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
       $word6 = "Free Freight";
       $word7 = "Discounted Freight";
+      $word8 = "QuickShip";
+      $word9 = "LocalDelivery";
+      
       
       $mystring3 = $product_line_items[$keys3]['tags'];
 if(strpos($mystring3, $word3) !== false) {
@@ -174,10 +177,23 @@ if(strpos($mystring3, $word3) !== false) {
 }
       
 if(strpos($mystring3, $word6) !== false) {
- $labeltype2 = '<button class="button-free"><span class="badge-free-freight">Free Shipping!</span></button>';
-} else if(strpos($mystring3, $word7) !== false) {
-  $labeltype2 = '<button style="text-indent:5px;"class="button-discounted"><span class="badge-discounted-freight">Discounted Freight!</span></button>';
+ $labeltype2 = '<div style="margin-bottom:-25px;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
+} 
+if(strpos($mystring3, $word8) !== false) {
+ $labeltype2 = '<div style="margin-bottom:-25px;"><span style="font-weight: bold;font-size: 18px;color:#950c0c"> Quick Ship</span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
+} 
+if(strpos($mystring3, $word9) !== false) {
+ $labeltype2 = '<div style="margin-top:-45px;"><span class="pickup-mobile"> Pickup In Store</span> <img style="position:absolute;margin-top:-70px;width: 120px;height:110px;" class="pickup-icon-mobile"src="https://marketplace.magento.com/media/catalog/product/cache/7230773f37a543ef738e324844b23ad1/s/t/store-pickup_1.png"><br></div>';
+}             
+if(strpos($mystring3, $word7) !== false) {
+  $labeltype2 = '<span style="font-weight: bold;font-size: 18px;color:#136FF3;"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br>';
+} else {
+  $labeltype2 = '<div style="visibility:hidden;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
 }
+      
+      
+
+      
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
@@ -389,7 +405,9 @@ if(strpos($mystring3, $word6) !== false) {
 
 <div style="margin-bottom:20px;" class="price">'.$price1.' '.$price2.'</div>
 
+'.$labeltype2.'
 
+<br>
 <a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
 </div>
 </div>';
