@@ -321,7 +321,15 @@ if(strpos($mystring3, $word6) !== false) {
         
 </div></a></div>
 </div>
-<div class="product-info"><a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
+<div class="product-info">
+ <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+      <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
+       </form>
+    <br>
+
+<a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
 </div>
 </div>';
          
