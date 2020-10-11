@@ -356,7 +356,7 @@ if(strpos($mystring3, $word6) !== false) {
 }
     
 </style>
-<div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price1.'" style="height:375px;">     
+<div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
 <div class="prod-image"> '.$labeltype2.' <a href="'.$collpath.'/products/'.$handle1.'" title="'.$protitle2.'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.$protitle2.'">
 '.$labeltype.'
