@@ -131,7 +131,16 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $proname2 = $product_line_items[$keys3]['name'];
          $handle1 = $product_line_items[$keys3]['handle'];
          $proimgs1 = $product_line_items[$keys3]['image']['src'];
-         $price1 = $product_line_items[$keys3]['variants'][0]['price'];
+      
+         $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
+         $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
+      
+      if($price_varient1 < $price_compare_at_price)
+      {
+       $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
+      } else {
+       $price1 = '<div class="prod-price"><span class="normal-money">Price $'.$price_varient1.'</span></div>';
+      }
       
          $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
          
@@ -371,7 +380,7 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
     <br>
 
-<div class="price"><div class="prod-price"><span class="normal-money">Price $'.$price1.'</span></div></div>
+<div class="price"></div>
 
 
 <a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
