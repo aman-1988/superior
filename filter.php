@@ -132,6 +132,8 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $handle1 = $product_line_items[$keys3]['handle'];
          $proimgs1 = $product_line_items[$keys3]['image']['src'];
          $price1 = $product_line_items[$keys3]['variants'][0]['price'];
+      
+         $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
          
          $tagss1 = str_replace(" ", "-",strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags'])));
          
@@ -323,7 +325,7 @@ if(strpos($mystring3, $word6) !== false) {
 </div>
 <div class="product-info">
  <form method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      <input type="hidden" name="id" value="'.$first_varientid.'" />
       <input min="1" type="number" id="quantity" name="quantity" value="1"/>
       <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
        </form>
