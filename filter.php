@@ -371,7 +371,10 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
     <br>
 
-<a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a><div class="price"><div class="prod-price"><span class="normal-money">$'.$price1.'</span></div></div></div>
+<div class="price"><div class="prod-price"><span class="normal-money">Price $'.$price1.'</span></div></div>
+
+
+<a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
 </div>
 </div>';
          
