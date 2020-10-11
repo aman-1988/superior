@@ -404,7 +404,7 @@ if(strpos($mystring3, $word6) !== false) {
 '.$labeltype2.' 
 '.$labeltype3.'
 <br>
-<a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
+<a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.$protitle2.'</p></a></div>
 </div>
 </div>';
          
