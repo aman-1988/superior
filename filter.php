@@ -186,9 +186,9 @@ if(strpos($mystring3, $word9) !== false) {
  $labeltype2 = '<div style="margin-top:-45px;"><span class="pickup-mobile"> Pickup In Store</span> <img style="position:absolute;margin-top:-70px;width: 120px;height:110px;" class="pickup-icon-mobile"src="https://marketplace.magento.com/media/catalog/product/cache/7230773f37a543ef738e324844b23ad1/s/t/store-pickup_1.png"><br></div>';
 }             
 if(strpos($mystring3, $word7) !== false) {
-  $labeltype2 = '<span style="font-weight: bold;font-size: 18px;color:#136FF3;"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br>';
+  $labeltype3 = '<span style="font-weight: bold;font-size: 18px;color:#136FF3;"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br>';
 } else {
-  $labeltype2 = '<div style="visibility:hidden;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
+  $labeltype3 = '<div style="visibility:hidden;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
 }
       
       
@@ -405,8 +405,8 @@ if(strpos($mystring3, $word7) !== false) {
 
 <div style="margin-bottom:20px;" class="price">'.$price1.' '.$price2.'</div>
 
-'.$labeltype2.'
-
+'.$labeltype2.' 
+'.$labeltype3.'
 <br>
 <a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
 </div>
