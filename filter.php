@@ -397,10 +397,10 @@ if(strpos($mystring3, $word6) !== false) {
       <input min="1" type="number" id="quantity" name="quantity" value="1"/>
       <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
        </form>
-    <br>
+    
 
 <div style="margin-bottom:20px;" class="price">'.$price1.' '.$price2.'</div>
-
+<br>
 '.$labeltype2.' 
 '.$labeltype3.'
 
