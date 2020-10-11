@@ -251,6 +251,7 @@ if(strpos($mystring3, $word6) !== false) {
   }
   .prod-border {
     border: 5px solid #ccc;
+    height:620px;
   }
    .variation {
    position: absolute;
@@ -259,17 +260,18 @@ if(strpos($mystring3, $word6) !== false) {
     border: 2px solid #00000000;
     border-radius: 2px;
     bottom: -40px;
-    left: 10px;
+    left: 15px;
     background: #c46e39;
     font-size: 10px;
     z-index: 1;
     display: flex;
-    top: 160px;
+    top: 7px;
     color: #EEEEEE;
     font-weight: bold;
     padding-bottom: 10px;
     margin-left:-7px;
        box-shadow: 2px 4px #888888;
+
   }
 .variationBetter {
    position: absolute;
@@ -278,17 +280,19 @@ if(strpos($mystring3, $word6) !== false) {
     border: 2px solid #00000000;
     border-radius: 2px;
     bottom: -40px;
-    left: 10px;
+    left: 15px;
     background: #136FF3;
     font-size: 10px;
     z-index: 1;
     display: flex;
-    top: 160px;
+    top: 7px;
     color: #EEEEEE;
     font-weight: bold;
     padding-bottom: 10px;
     margin-left:-7px;
     box-shadow: 2px 4px #888888;
+
+
   }
  .variationBest {
    position: absolute;
@@ -297,24 +301,60 @@ if(strpos($mystring3, $word6) !== false) {
     border: 2px solid #00000000;
     border-radius: 2px;
     bottom: -40px;
-    left: 10px;
+    left: 15px;
     background: #09B63B;
     font-size: 10px;
     z-index: 1;
     display: flex;
-    top: 160px;
+    top: 7px;
     color: #EEEEEE;
     font-weight: bold;
     padding-bottom: 10px;
     margin-left:-7px;
      box-shadow: 2px 4px #888888;
+
+
+  }
+  
+  .carter {
+  background: #950c0c;
+    
+  }
+  @media screen and (min-width: 600px) {
+
+  .pickup-mobile {
+    font-weight: bold;font-size: 18px;color:#6e9674
   }
     
-  @media screen and (min-width: 980px) {
-    .prod-border {
-      min-height: 375px;
-    }
+  .pickup-img-mobile {
+  
+  width: 120px !important;
+  height: 110px !important; 
+  margin-left:100px !important;
+
+  
   }
+    
+  }
+@media screen and (max-width: 500px) {
+
+.pickup-mobile {
+    font-weight: bold;font-size: 14px;color:#6e9674
+
+
+}
+
+.pickup-icon-mobile {
+  margin-left:80px !important;
+  width: 100px;
+  height: 110px;
+
+}
+  
+  
+  
+}
+    
 </style>
 <div data-tag="'.$product_line_items[$keys3]['tags'].'" class="'.$product_line_items[$keys3]['tags'].' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price1.'" style="height:375px;">     
 <div class="prod-border"><div class="prod-container">
