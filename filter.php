@@ -131,6 +131,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $proname2 = $product_line_items[$keys3]['name'];
          $handle1 = $product_line_items[$keys3]['handle'];
          $proimgs1 = $product_line_items[$keys3]['image']['src'];
+      $product_type1 = $product_line_items[$keys3]['product_type'];
       
          $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
          $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
@@ -141,6 +142,12 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       } else {
        $price1 = '<div class="prod-price"><span class="normal-money">Price $'.$price_varient1.'</span></div>';
       }
+      
+      if( $price_varient1 > 100000 && $product_type1 == 'Equipment') {
+       
+       $price2 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
+      }
+      
       
          $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
          
@@ -380,7 +387,7 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
     <br>
 
-<div class="price"></div>
+<div style="margin-bottom:20px;" class="price">'.$price1.' '.$price2.'</div>
 
 
 <a href="'.$collpath.'/products/'.$handle1.'"><h3>'.$protitle2.'</h3></a></div>
