@@ -400,10 +400,10 @@ if(strpos($mystring3, $word6) !== false) {
     <br>
 
 <div style="margin-bottom:20px;" class="price">'.$price1.' '.$price2.'</div>
-<br>
+
 '.$labeltype2.' 
 '.$labeltype3.'
-<br>
+
 <a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.$protitle2.'</p></a></div>
 </div>
 </div>';
