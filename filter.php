@@ -31,7 +31,23 @@ $("form").submit(function( event ) {
   
  var idvalus = $(this).find("input[name=id]").val();
  var qtyss = $(this).find("input[name=quantity]").val();
-  alert(idvalus + " " + qtyss);
+  //alert(idvalus + " " + qtyss);
+  
+  $.ajax({
+      type: "POST", 
+      url: "/cart/add.js",
+      dataType: "json", 
+      data: $(this).serialize(),
+      success: addToCartOk,
+      error: addToCartFail
+   });
+   
+   function addToCartOk(product) { 
+   cartCount++; 
+   alert(product.title + " was added to the cart!"); 
+   }
+  
+  
   //alert(data);
   event.preventDefault();
 });
