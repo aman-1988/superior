@@ -41,7 +41,7 @@ event.preventDefault();
       data: "quantity=" + qtyss + "&id=" + idvalus,
       dataType: "json",
       success: function() { 
-      $("#ajaxified" + idvalus).css("display", "inline-block"); 
+      $("#ajaxified" + idvalus).css({"display":"inline-block", "margin":"0px"}); 
       }
    });
    
@@ -432,8 +432,8 @@ if(strpos($mystring3, $word6) !== false) {
 <div class="product-info">
  <form method="post" id="targetforms" action="/cart/add">
       <input type="hidden" name="id" value="'.$first_varientid.'" />
-      <input min="1" type="number" id="quantity" name="quantity" value="1"/>
-      <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
+      <input min="1" type="number" style="margin-bottom:8px;" id="quantity" name="quantity" value="1"/>
+      <input style="background:#950c0c; margin-bottom:8px;" type="submit" value="Add to cart" class="btn" />
        </form>
    <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
 
