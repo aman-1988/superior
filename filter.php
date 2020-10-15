@@ -31,7 +31,7 @@ $("#targetforms").submit(function( event ) {
   
  $(this).each(function(index) {  
         var input = $(this);
-        alert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
+        alert("Type: " + input.attr("type") + "Name: " + input.attr("name") + "Value: " + input.val());
     }
 );
   
