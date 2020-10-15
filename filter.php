@@ -20,9 +20,15 @@ else
  echo '<script type="text/javascript">
  $("#onclickss").click(function() {  
     //event.preventDefault();   
-  alert( "Handler for .submit() called." );
+  //alert( "Handler for .submit() called." );
  
 });
+
+$("#targetforms").submit(function( event ) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+
  </script>
 ';
  
