@@ -24,7 +24,7 @@ else
  
 });
 
-$("#targetforms").submit(function( event ) {
+$("form").submit(function( event ) {
   //alert( "Handler for .submit() called." );
   //var qtyss = $( "input" ).val();
   var data = $(this).serializeArray();
