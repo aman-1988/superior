@@ -42,10 +42,7 @@ $("form").submit(function( event ) {
       error: addToCartFail
    });
    
-   function addToCartOk(product) { 
-   cartCount++; 
-   alert(product.title + " was added to the cart!"); 
-   }
+   
   
   
   //alert(data);
