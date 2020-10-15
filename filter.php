@@ -33,16 +33,19 @@ event.preventDefault();
   
  var idvalus = $(this).find("input[name=id]").val();
  var qtyss = $(this).find("input[name=quantity]").val();
-  alert(idvalus + " " + qtyss);
+  //alert(idvalus + " " + qtyss);
   
   $.ajax({
       type: "POST", 
       url: "/cart/add.js",
       data: "quantity=" + qtyss + "&id=" + idvalus,
       dataType: "json",
+      success: function() { 
+      $("#ajaxified" + idvalus).css("display", "inline-block"); 
+      }
    });
    
-   
+  
   
   
   //alert(data);
@@ -432,7 +435,7 @@ if(strpos($mystring3, $word6) !== false) {
       <input min="1" type="number" id="quantity" name="quantity" value="1"/>
       <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
        </form>
-    
+   <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
 
 <div style="margin-bottom:20px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
 <br>
