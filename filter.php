@@ -437,7 +437,7 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
    <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
 
-<div style="margin-bottom:20px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
+<div style="margin-bottom:10px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
 <br>
 '.$labeltype2.' 
 '.$labeltype3.'
