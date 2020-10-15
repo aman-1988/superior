@@ -30,7 +30,7 @@ $("#targetforms").submit(function( event ) {
   var data = $(this).serializeArray();
   
  $.each(data, function( index, value ) {
-  alert( index + ": " + value );
+  alert( index + ": " + value['id'] );
 });
   
   //alert(data);
