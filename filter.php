@@ -25,7 +25,10 @@ else
 });
 
 $("#targetforms").submit(function( event ) {
-  alert( "Handler for .submit() called." );
+  //alert( "Handler for .submit() called." );
+  //var qtyss = $( "input" ).val();
+  var data = $(this).serializeArray();
+  alert(data);
   event.preventDefault();
 });
 
