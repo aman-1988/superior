@@ -29,9 +29,11 @@ $("#targetforms").submit(function( event ) {
   //var qtyss = $( "input" ).val();
   var data = $(this).serializeArray();
   
- $.each(data, function( index, value ) {
-  alert( index + ": " + value["id"] );
-});
+ $(this).each(function(index) {  
+        var input = $(this);
+        alert('Type: ' + input.attr('type') + 'Name: ' + input.attr('name') + 'Value: ' + input.val());
+    }
+);
   
   //alert(data);
   event.preventDefault();
