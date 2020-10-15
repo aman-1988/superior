@@ -24,7 +24,9 @@ else
  
 });
 
-$("form").submit(function( event ) {
+$("form").submit(function(event) {
+
+event.preventDefault();
   //alert( "Handler for .submit() called." );
   //var qtyss = $( "input" ).val();
   var data = $(this).serializeArray();
@@ -38,15 +40,13 @@ $("form").submit(function( event ) {
       url: "/cart/add.js",
       data: "quantity=" + qtyss + "&id=" + idvalus,
       dataType: "json",
-      success: addToCartOk,
-      error: addToCartFail
    });
    
    
   
   
   //alert(data);
-  event.preventDefault();
+  
 });
 
  </script>
