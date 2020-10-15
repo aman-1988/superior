@@ -416,11 +416,11 @@ if(strpos($mystring3, $word6) !== false) {
        else if(!empty($str_arr)) {
              
         
-        print_r($str_arr2);
-        echo "<br>";
+        //print_r($str_arr2);
+        //echo "<br>";
         
-        print_r($str_arr);
-        echo "<br><br>";
+        //print_r($str_arr);
+        //echo "<br><br>";
         
         
          $result=array_intersect($str_arr2,$str_arr);
