@@ -29,11 +29,7 @@ $("#targetforms").submit(function( event ) {
   //var qtyss = $( "input" ).val();
   var data = $(this).serializeArray();
   
- $(this).each(function(index) {  
-        var input = $(this);
-        alert("Type: " + input.attr("type") + "Name: " + input.attr("name") + "Value: " + input.val());
-    }
-);
+ alert($("this input[name=id]").val());
   
   //alert(data);
   event.preventDefault();
