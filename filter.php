@@ -31,13 +31,13 @@ $("form").submit(function( event ) {
   
  var idvalus = $(this).find("input[name=id]").val();
  var qtyss = $(this).find("input[name=quantity]").val();
-  //alert(idvalus + " " + qtyss);
+  alert(idvalus + " " + qtyss);
   
   $.ajax({
       type: "POST", 
       url: "/cart/add.js",
-      dataType: "json", 
-      data: $(this).serialize(),
+      data: "quantity=" + qtyss + "&id=" + idvalus,
+      dataType: "json",
       success: addToCartOk,
       error: addToCartFail
    });
