@@ -28,7 +28,14 @@ $("#targetforms").submit(function( event ) {
   //alert( "Handler for .submit() called." );
   //var qtyss = $( "input" ).val();
   var data = $(this).serializeArray();
-  alert(data);
+  
+  var values = {};
+$.each($("#myForm").serializeArray(), function(i, field) {
+    values[field.name] = field.value;
+    alert(values[field.name]);
+});
+  
+  //alert(data);
   event.preventDefault();
 });
 
