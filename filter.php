@@ -394,7 +394,7 @@ if(strpos($mystring3, $word6) !== false) {
 </div></a></div>
 </div>
 <div class="product-info">
- <form method="post" action="/cart/add">
+ <form method="post" id="targetforms" action="/cart/add">
       <input type="hidden" name="id" value="'.$first_varientid.'" />
       <input min="1" type="number" id="quantity" name="quantity" value="1"/>
       <input style="background:#950c0c;" type="submit" value="Add to cart" class="btn" />
