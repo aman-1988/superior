@@ -17,7 +17,14 @@ else
     
    // echo $name." - ".$varientss; 
  
+ echo '<script type="text/javascript">
+ $("#onclickss").click(function() {  
+    //event.preventDefault();   
+  alert( "Handler for .submit() called." );
  
+});
+ </script>
+';
  
  
  
