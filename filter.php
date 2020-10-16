@@ -192,7 +192,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
         $tagsss2_1 = str_replace('(', '',$tagsss2);
         $tagsss2_2 = str_replace(')', '',$tagsss2_1);
-        $tagsss2_3 = str_replace('/', '',$tagsss2_2)
+        $tagsss2_3 = str_replace('/', '',$tagsss2_2);
          $str_arr2 = explode (",", $tagsss2_3);  
          //print_r($str_arr2);
       
