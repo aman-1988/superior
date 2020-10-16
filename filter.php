@@ -190,7 +190,9 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $tagss1 = str_replace("/", "-",$tagss1);      
          $tagsss2 = str_replace('?_', '-_', str_replace('.', '', $tagss1));
       
-         $str_arr2 = explode (",", $tagsss2);  
+        $tagsss2_1 = str_replace('(', '',$tagsss2);
+        $tagsss2_2 = str_replace(')', '',$tagsss2_1);
+         $str_arr2 = explode (",", $tagsss2_2);  
          //print_r($str_arr2);
       
       $word3 = "RankGood";
@@ -452,11 +454,11 @@ if(strpos($mystring3, $word6) !== false) {
        else if(!empty($str_arr)) {
              
         
-        print_r($str_arr2);
-        echo "<br>";
+       //print_r($str_arr2);
+       // echo "<br>";
         
-        print_r($str_arr);
-        echo "<br><br>";
+        //print_r($str_arr);
+       // echo "<br><br>";
         
         
          $result=array_intersect($str_arr2,$str_arr);
