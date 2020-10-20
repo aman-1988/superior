@@ -523,7 +523,8 @@ if(strpos($mystring3, $word6) !== false) {
             else if($color_counts1 >= 2  && $duplicates >= 2) { if(count($result) >= 3) { print_r($result2); } }
             else if($duplicates >= 2) { if(count($result) >= 3) { print_r($result2); } }  
             else if($duplicates >= 2 && count($result) >= 2) { print_r($result2);   }
-            else if($duplicates >= 1 && count($result) >= 3) { print_r($result2); }            
+            else if($duplicates >= 1 && count($result) >= 3) { print_r($result2); }   
+           else if($duplicates >= 4) { print_r($result2); }
             
          }
          else if(count($str_arr) == 4)
@@ -535,7 +536,8 @@ if(strpos($mystring3, $word6) !== false) {
             // else if($material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
             // else if($color_counts1 >= 1 && $material_counts1 >= 1 && count($result) >= 3) { print_r($result2); }  
             else if($duplicates >= 2 && count($result) >= 2) { print_r($result2);   }
-             else if($duplicates >= 1 && count($result) >= 3) { print_r($result2);   }
+            else if($duplicates >= 1 && count($result) >= 3) { print_r($result2);   }
+           else if($duplicates >= 3) { print_r($result2); }
                   
          } 
          else if(count($str_arr) == 3)
