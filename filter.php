@@ -185,9 +185,24 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
          $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
          
-         $tagss1 = str_replace(" ", "-",strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags'])));
+         //$tagss1 = str_replace(" ", "-",strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags'])));
          
-         $tagss1 = str_replace("/", "-",$tagss1);      
+         //$tagss1 = str_replace("/", "-",$tagss1);      
+        // $tagsss2 = str_replace('?_', '-_', str_replace('.', '', $tagss1));
+      
+       // $tagsss2_1 = str_replace('(', '',$tagsss2);
+       // $tagsss2_2 = str_replace(')', '',$tagsss2_1);
+       // $tagsss2_3 = str_replace('/', '',$tagsss2_2);
+      //  $tagsss2_4 = str_replace('-&', '',$tagsss2_3);
+       // $tagsss2_5 = str_replace('"', '',$tagsss2_4);
+       //  $str_arr2 = explode (",", $tagsss2_5);  
+      
+      
+      $vp_string = strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags']));
+$strs11 = str_replace(" ", "-", $vp_string);
+$strs22 = str_replace(".", "-", $strs11);
+
+ $tagss1 = str_replace("/", "-",$strs22);      
          $tagsss2 = str_replace('?_', '-_', str_replace('.', '', $tagss1));
       
         $tagsss2_1 = str_replace('(', '',$tagsss2);
@@ -195,7 +210,23 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
         $tagsss2_3 = str_replace('/', '',$tagsss2_2);
         $tagsss2_4 = str_replace('-&', '',$tagsss2_3);
         $tagsss2_5 = str_replace('"', '',$tagsss2_4);
-         $str_arr2 = explode (",", $tagsss2_5);  
+        // $str_arr2 = explode (",", $tagsss2_5);  
+
+     $tagsss2_6 = ltrim(str_replace("--", "-", $tagsss2_5),"-");
+     $tagsss2_7 = rtrim($tagsss2_6,"-");
+      $str_arr2 = explode (",", $tagsss2_7);  
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
          //print_r($str_arr2);
       
       $word3 = "RankGood";
@@ -457,11 +488,11 @@ if(strpos($mystring3, $word6) !== false) {
        else if(!empty($str_arr)) {
              
         
-      // print_r($str_arr2);
-      // echo "<br>";
+       print_r($str_arr2);
+       echo "<br>";
         
-      // print_r($str_arr);
-      // echo "<br><br>";
+      print_r($str_arr);
+       echo "<br><br>";
         
         
          $result=array_intersect($str_arr2,$str_arr);
