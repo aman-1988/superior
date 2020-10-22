@@ -214,7 +214,7 @@ $strs22 = str_replace(".", "-", $strs11);
 
      $tagsss2_6 = ltrim(str_replace("--", "-", $tagsss2_5),"-");
       
-     $tagsss2_62 = trim($tagsss2_6);
+     $tagsss2_62 = trim($tagsss2_6,'-');
       $tagsss2_7 = rtrim($tagsss2_62,"-");
       
       $tagsss2_8 = str_replace("'", "",$tagsss2_7);
