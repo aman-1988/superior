@@ -203,7 +203,7 @@ $strs11 = str_replace(" ", "-", $vp_string);
 $strs22 = str_replace(".", "-", $strs11);
 
  $tagss1 = str_replace("/", "-",$strs22);      
-         $tagsss2 = str_replace('?_', '-_', str_replace('.', '', $tagss1));
+         $tagsss2 = str_replace('?_', '-_', $tagss1);
       
         $tagsss2_1 = str_replace('(', '',$tagsss2);
         $tagsss2_2 = str_replace(')', '',$tagsss2_1);
