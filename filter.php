@@ -197,7 +197,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
        // $tagsss2_5 = str_replace('"', '',$tagsss2_4);
        //  $str_arr2 = explode (",", $tagsss2_5);  
       
-      
+      echo $product_line_items[$keys3]['tags']."<br>";
       $vp_string = strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags']));
 $strs11 = str_replace(" ", "-", $vp_string);
 $strs22 = str_replace(".", "-", $strs11);
