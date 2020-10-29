@@ -80,7 +80,7 @@ return $json_data_shopify;
 }
 
  
-function httpPost9($url,$params)
+function httppost($url,$params)
 {
 $postData = $params;
 $data_string = json_encode($postData);                                                                                   
@@ -235,8 +235,8 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
         // $price_varient1 = $product_line_items3['variants'][0]['price'];
          //$price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
         
-    //  $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
-   // $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
+      $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
+    $productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
       
        //$price_varient1_1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
        //$price_compare_at_price_1 = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
