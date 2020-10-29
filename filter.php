@@ -238,9 +238,9 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
       $queries = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
        $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/2020-07/graphql.json",$queries);
       
-        $price_varient1_1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
-        $price_compare_at_price_1 = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
-      echo $price_varient1_1." - ".$price_compare_at_price_1;
+       // $price_varient1_1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+      //  $price_compare_at_price_1 = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
+      //echo $price_varient1_1." - ".$price_compare_at_price_1;
       
        $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
        $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
