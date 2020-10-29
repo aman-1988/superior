@@ -5,7 +5,8 @@
    
    $next_info = $next_prvious['next'];
   // echo $next_info;
-    $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?page_info=".$next_info."&limit=250");
+    //$json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?page_info=".$next_info."&limit=250");
+      $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?page_info=".$next_info."&limit=250");
     //print_r($json_data);
     $product_line_items = $json_data['products'];  
 
