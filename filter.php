@@ -213,8 +213,8 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
 
      
      
-//$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
- $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
+// $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
@@ -655,7 +655,7 @@ if(strpos($mystring3, $word6) !== false) {
  
  
  
-//include('inc_filter.php'); 
+include('inc_filter.php'); 
  
  
     
