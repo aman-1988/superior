@@ -20,8 +20,12 @@
          $proimgs1 = $product_line_items[$keys3]['image']['src'];
       $product_type1 = $product_line_items[$keys3]['product_type'];
       
-         $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
-         $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
+        
+        
+         $productss2 = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
+         $product_line_items3 = $productss2['product'];  
+         $price_varient1 = $product_line_items3['variants'][0]['price'];
+         $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
       
       if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
