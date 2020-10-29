@@ -100,6 +100,46 @@ return $json_data_shopify;
 }
 
 
+function parsePaginationLinkHeader($headerLink) 
+{
+    $available_links = [];
+    $links = explode(',', $headerLink);
+    foreach ($links as $link){
+
+        if (preg_match('/<(.*)>;\srel=\\"(.*)\\"/', $link, $matches)) {
+
+            $query_str = parse_url($matches[1], PHP_URL_QUERY);
+            parse_str($query_str, $query_params);
+            $available_links[$matches[2]] = $query_params['page_info'];
+        }
+    }
+    return $available_links;
+}
+
+function getorder9($url)
+{
+$ch = curl_init($url);      
+//curl_setopt($ch, CURLOPT_URL,$url);
+//curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_VERBOSE, 1);
+curl_setopt($ch, CURLOPT_HEADER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");                                                                     
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    'Content-Type: application/json',  'Authorization: Basic M2U5M2I5ZDBlMWQxMjk3MjI1YTU4MzI4ZTJiMjczZDY6c2hwcGFfODk0MTQ1ZTg0ODcwOTg1Y2MyOTRlNzMzODk5YjUwOWU=')                                                                     
+);                                                                                                                   
+$output = curl_exec($ch);
+$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+$header = substr($output, 0, $header_size);
+$body = substr($output, $header_size);
+
+curl_close($ch); 
+$json_data_shopify = json_decode($output,true);   
+return $header;
+}
+ 
+ 
 
 
 
