@@ -79,7 +79,24 @@ $json_data_shopify = json_decode($output,true);
 return $json_data_shopify;
 }
 
-
+function httpPost9($url,$params)
+{
+$postData = $params;
+$data_string = json_encode($postData);                                                                                   
+$ch = curl_init($url);      
+//curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    'Content-Type: application/json',                                                                                
+    'Authorization: Basic M2U5M2I5ZDBlMWQxMjk3MjI1YTU4MzI4ZTJiMjczZDY6c2hwcGFfODk0MTQ1ZTg0ODcwOTg1Y2MyOTRlNzMzODk5YjUwOWU=')                                                                     
+);                                                                                                                   
+$output = curl_exec($ch);
+curl_close($ch); 
+$json_data_auspost = json_decode($output,true);   
+return $json_data_auspost;
+} 
 
 function getorder($url)
 {
