@@ -237,7 +237,7 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
         
      // $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
    // $productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
-       $productss2 = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
+       $productss2 = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products/".$productid2."/variants.json");
       
        //$price_varient1_1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
        //$price_compare_at_price_1 = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
