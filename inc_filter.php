@@ -25,28 +25,14 @@
          //$product_line_items3 = $productss2['product'];  
         // $price_varient1 = $product_line_items3['variants'][0]['price'];
          //$price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
-        $queries = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { 
-        variants(first:1)
-        {
-          edges
-          {
-            node
-            {
-              compareAtPrice
-              price
-              title
-            }
-          }
-        }
-
-    } }');
-       $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/2020-10/graphql.json",$queries);
-      
-        $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
-        $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
         
-        //$price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
-        //$price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
+       // $queries = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price  title  }  } }    } }');
+      // $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/2020-10/graphql.json",$queries); 
+       // $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+      //  $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
+        
+        $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
+        $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
       if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
