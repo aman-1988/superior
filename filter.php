@@ -214,7 +214,7 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
      
      
 //$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
- $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/collections/".$name."/products.json?sort_order=price-asc&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
@@ -250,7 +250,7 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
         }
 
     } }');
-       $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/2020-10/graphql.json",$queries);
+       $productss2 = httpPost9("https://".$SHOPIFY_SHOP."/admin/api/2020-07/graphql.json",$queries);
       
         $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
         $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
