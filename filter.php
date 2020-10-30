@@ -564,7 +564,7 @@ if(strpos($mystring3, $word6) !== false) {
  
  
  
-include('inc_filter.php'); 
+//include('inc_filter.php'); 
  
  
     
