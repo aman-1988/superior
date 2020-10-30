@@ -323,7 +323,7 @@ echo '<style>
       // $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
       // $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
-       include('condition_for_loop.php');
+        include('condition_for_loop.php');
         $product_line_items3 = $productss2['product'];  
        $price_varient1 = $product_line_items3['variants'][0]['price'];
        $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
@@ -440,7 +440,8 @@ if(strpos($mystring3, $word6) !== false) {
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
-      
+      if(!empty($price_varient1))
+      {
       $result2 = '
 <div data-tag="'.htmlspecialchars($allproductatgs).'" class="'.htmlspecialchars($allproductatgs).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
@@ -466,7 +467,7 @@ if(strpos($mystring3, $word6) !== false) {
 <a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.htmlspecialchars($protitle2).'</p></a></div>
 </div>
 </div>';
-      
+      }   
 
          
       if(empty($varientss)) {
