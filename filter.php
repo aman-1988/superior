@@ -445,7 +445,7 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
    <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
 
-<div style="margin-bottom:10px;" id="onclickss" class="price">'.getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid).'</div>
+<div style="margin-bottom:10px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
 <br>
 '.$labeltype2.' 
 '.$labeltype3.'
