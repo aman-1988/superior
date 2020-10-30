@@ -219,8 +219,8 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
   
  // print_r($productss2);
   
-   $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
-   $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];   
+   //$price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+  // $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];   
   
   if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
@@ -231,7 +231,7 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
       if( $price_varient1 > 1000 && $product_type1 == 'Equipment') {       
        $price1 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
       }
- return $productss2;
+ return $price1;
   
  }
  
