@@ -295,7 +295,7 @@ echo '<style>
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
-
+$counter = 0;
      foreach ($product_line_items as $keys3 => $values3)
      {
          $productid2 = $product_line_items[$keys3]['id'];
@@ -559,13 +559,16 @@ if(strpos($mystring3, $word6) !== false) {
          }
          
        unset($first_varientid);   
+       $counter++;
      }     
  
  
  
- 
+ $total_count=$counter-1;
+ if($total_count >= 250)
+ {
 include('inc_filter.php'); 
- 
+ }
  
     
 }
