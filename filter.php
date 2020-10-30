@@ -290,8 +290,8 @@ echo '<style>
 
      
      
-$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
-// $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+//$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
+ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
@@ -325,6 +325,14 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
        $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
       
+      
+      $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
+    //$productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
+      
+      include('condition_for_loop.php');
+      
+       $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+       $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
       
       
         if($price_varient1 < $price_compare_at_price) {
