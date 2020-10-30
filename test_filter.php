@@ -514,12 +514,12 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
             else if($duplicates >= 2) { print_r($result2);   }  
           
          } else if(count($str_arr) == count($result)) {
-             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));
 ); 
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
-             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));
 );   
-         } else if(count($result) == 2 && count($str_arr) == 2) { print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));
 ); }
           
          
