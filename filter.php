@@ -230,8 +230,8 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       $product_type1 = $product_line_items[$keys3]['product_type'];
       $admin_graphql_api_id = $product_line_items[$keys3]['admin_graphql_api_id'];
       
-      $productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
-       $product_line_items3 = $productss2['product'];  
+      //$productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
+      // $product_line_items3 = $productss2['product'];  
         // $price_varient1 = $product_line_items3['variants'][0]['price'];
          //$price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
         
