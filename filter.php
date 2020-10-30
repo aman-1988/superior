@@ -208,6 +208,62 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
 //echo "<br><br>";
 
 
+ 
+ 
+ 
+ 
+ function getproductss()
+ {
+  
+  
+  
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+echo '<style>
+  .Retail { color:#950c0c; font-size:14px; font-weight:bold;
+  }
+  .normal-money {  color: #950c0c;   font-size: 18px;  font-weight: bold;  }
+  .money { color: #950c0c;   font-size: 16px;   font-weight: bold;  }
+  .email {  color: #FFFFF;   font-size: 16px;   font-weight: bold;   }
+  .button-free {  background-color: #950c0c;   opacity: 0.8;  padding: -32px 16px;   position: absolute;   top:-7%;   left:-3%;   width:97px;  height: 28px;  }
+  
+   .button-free:hover {  background-color: #950c0c;    }
+  
+   .button-free:active {   background-color: #950c0c;    }
+  .badge-free-freight {  color: #FFFFF;  font-size: 9px;   font-weight: bold;   line-height: 10px;   margin-left: -14px;   vertical-align: text-top;  }
+  
+  .button-discounted {   background-color: ##136FF3;   opacity: 0.8;   padding: -32px 16px;   position: absolute;   top: -7%;   left: -3%;   width: 145px;   height: 28px;  }
+  
+  .button-discounted: hover {   background: #136FF3;   opacity: 0.8;   padding: -32px 16px;   position: absolute;  top: -7%;  left: -3%;  width: 145px;  height: 28px;    }
+  
+  .badge-discounted-freight {   color: #FFFFF;  font-size: 10px;  font-weight: bold;  line-height: 10px;   margin-left: -14px;   vertical-align: text-top;  }
+  .prod-border {   border: 5px solid #ccc;   height:620px;  }
+   .variation {   position:absolute;    width:50px;   height:20px;   border:2px solid #00000000;   border-radius:2px;   bottom:-40px;  left:15px;   background:#c46e39;  font-size:10px;   z-index:1;
+    display: flex;   top: 7px;   color: #EEEEEE;   font-weight: bold;   padding-bottom: 10px;   margin-left:-7px;   box-shadow: 2px 4px #888888;  }
+.variationBetter {  position: absolute;   width: 60px;   height: 20px;   border: 2px solid #00000000;  border-radius: 2px;   bottom: -40px;   left: 15px;   background: #136FF3;
+    font-size: 10px;   z-index: 1;   display: flex;   top: 7px;   color: #EEEEEE;   font-weight: bold;   padding-bottom: 10px;   margin-left:-7px;   box-shadow: 2px 4px #888888;  }
+ .variationBest {  position: absolute;   width: 50px;   height: 20px;   border: 2px solid #00000000;   border-radius: 2px;   bottom: -40px;  left: 15px;  background: #09B63B;
+    font-size: 10px;  z-index: 1;  display: flex;  top: 7px;  color: #EEEEEE;  font-weight: bold;  padding-bottom: 10px;  margin-left:-7px;  box-shadow: 2px 4px #888888;  }
+  
+  .carter { background: #950c0c;   }
+  @media screen and (min-width: 600px) {
+  .pickup-mobile {  font-weight: bold;font-size: 18px;color:#6e9674  }
+  .pickup-img-mobile {  width: 120px !important;  height: 110px !important;  margin-left:100px !important;  }  
+  }
+@media screen and (max-width: 500px) {
+.pickup-mobile { font-weight:bold; font-size:14px; color:#6e9674; }
+.pickup-icon-mobile {  margin-left:80px !important; width:100px;  height:110px; }
+}
+    
+</style>'; 
+ 
+ 
+ 
 
 
 
@@ -229,6 +285,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          $proimgs1 = $product_line_items[$keys3]['image']['src'];
       $product_type1 = $product_line_items[$keys3]['product_type'];
       $admin_graphql_api_id = $product_line_items[$keys3]['admin_graphql_api_id'];
+      $allproductatgs = $product_line_items[$keys3]['tags'];
       
       //$productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
       // $product_line_items3 = $productss2['product'];  
@@ -245,6 +302,10 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
        $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
        $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
+       $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
+      
+      
+      
       if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
       } else {
@@ -256,7 +317,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       }
       
       
-         $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
+         
          
          //$tagss1 = str_replace(" ", "-",strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags'])));
          
@@ -271,7 +332,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
        //  $str_arr2 = explode (",", $tagsss2_5);  
       
       //echo $product_line_items[$keys3]['tags']."<br>";
-      $vp_string = strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags']));
+      $vp_string = strtolower(str_replace(", ", ",",$allproductatgs));
 $strs11 = str_replace(" ", "-", $vp_string);
 $strs22 = str_replace(".", "-", $strs11);
 
@@ -317,7 +378,8 @@ $strs22 = str_replace(".", "-", $strs11);
       $word9 = "LocalDelivery";
       
       
-      $mystring3 = $product_line_items[$keys3]['tags'];
+      //$mystring3 = $product_line_items[$keys3]['tags'];
+      $mystring3 = $allproductatgs;
 if(strpos($mystring3, $word3) !== false) {
     $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
 } else if(strpos($mystring3, $word4) !== false) {
@@ -345,197 +407,8 @@ if(strpos($mystring3, $word6) !== false) {
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
       
-      $result2 = '<style>
-  .Retail {
-    color: #950c0c;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  .normal-money {
-    color: #950c0c;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .money {
-  color: #950c0c;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  .email {
-  color: #FFFFF;
-    font-size: 16px;
-    font-weight: bold;  
-  }
-  .button-free {
-   background-color: #950c0c;
-    opacity: 0.8;
-    padding: -32px 16px;
-    position: absolute;
-    top: -7%;
-    left: -3%;
-    width: 97px;
-    height: 28px;
-    
-  }
-  
-   .button-free:hover {
-   background-color: #950c0c;
-    
-  }
-  
-   .button-free:active {
-   background-color: #950c0c;
-    
-  }
-  .badge-free-freight {
-     color: #FFFFF;
-    font-size: 9px;
-    font-weight: bold;
-    line-height: 10px;
-    margin-left: -14px;
-    vertical-align: text-top;
-  }
-  
-  .button-discounted {
-   background-color: ##136FF3;
-    opacity: 0.8;
-    padding: -32px 16px;
-    position: absolute;
-    top: -7%;
-    left: -3%;
-    width: 145px;
-    height: 28px;
-    
-  }
-  
-  .button-discounted: hover {
-   background: #136FF3;
-    opacity: 0.8;
-    padding: -32px 16px;
-    position: absolute;
-    top: -7%;
-    left: -3%;
-    width: 145px;
-    height: 28px;
-    
-  }
-  
-  .badge-discounted-freight {
-     color: #FFFFF;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 10px;
-    margin-left: -14px;
-    vertical-align: text-top;
-  }
-  .prod-border {
-    border: 5px solid #ccc;
-    height:620px;
-  }
-   .variation {
-   position: absolute;
-    width: 50px;
-    height: 20px;
-    border: 2px solid #00000000;
-    border-radius: 2px;
-    bottom: -40px;
-    left: 15px;
-    background: #c46e39;
-    font-size: 10px;
-    z-index: 1;
-    display: flex;
-    top: 7px;
-    color: #EEEEEE;
-    font-weight: bold;
-    padding-bottom: 10px;
-    margin-left:-7px;
-       box-shadow: 2px 4px #888888;
-
-  }
-.variationBetter {
-   position: absolute;
-    width: 60px;
-    height: 20px;
-    border: 2px solid #00000000;
-    border-radius: 2px;
-    bottom: -40px;
-    left: 15px;
-    background: #136FF3;
-    font-size: 10px;
-    z-index: 1;
-    display: flex;
-    top: 7px;
-    color: #EEEEEE;
-    font-weight: bold;
-    padding-bottom: 10px;
-    margin-left:-7px;
-    box-shadow: 2px 4px #888888;
-
-
-  }
- .variationBest {
-   position: absolute;
-    width: 50px;
-    height: 20px;
-    border: 2px solid #00000000;
-    border-radius: 2px;
-    bottom: -40px;
-    left: 15px;
-    background: #09B63B;
-    font-size: 10px;
-    z-index: 1;
-    display: flex;
-    top: 7px;
-    color: #EEEEEE;
-    font-weight: bold;
-    padding-bottom: 10px;
-    margin-left:-7px;
-     box-shadow: 2px 4px #888888;
-
-
-  }
-  
-  .carter {
-  background: #950c0c;
-    
-  }
-  @media screen and (min-width: 600px) {
-
-  .pickup-mobile {
-    font-weight: bold;font-size: 18px;color:#6e9674
-  }
-    
-  .pickup-img-mobile {
-  
-  width: 120px !important;
-  height: 110px !important; 
-  margin-left:100px !important;
-
-  
-  }
-    
-  }
-@media screen and (max-width: 500px) {
-
-.pickup-mobile {
-    font-weight: bold;font-size: 14px;color:#6e9674
-
-
-}
-
-.pickup-icon-mobile {
-  margin-left:80px !important;
-  width: 100px;
-  height: 110px;
-
-}
-  
-  
-  
-}
-    
-</style>
-<div data-tag="'.htmlspecialchars($product_line_items[$keys3]['tags']).'" class="'.htmlspecialchars($product_line_items[$keys3]['tags']).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
+      $result2 = '
+<div data-tag="'.htmlspecialchars($allproductatgs).'" class="'.htmlspecialchars($allproductatgs).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
 <div class="prod-image"> 
 <a href="'.$collpath.'/products/'.$handle1.'" title="'.htmlspecialchars($protitle2).'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.htmlspecialchars($protitle2).'">
