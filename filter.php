@@ -323,33 +323,7 @@ echo '<style>
       // $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
       // $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
-        include('condition_for_loop.php');
-        $product_line_items3 = $productss2['product'];  
-       $price_varient1 = $product_line_items3['variants'][0]['price'];
-       $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
-        $first_varientid = $product_line_items3['variants'][0]['id'];
-       //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
-      
-      
-     // $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
-    //$productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
-      
-     
-      
-      // $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
-      // $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
-      
-      
-        if($price_varient1 < $price_compare_at_price) {
-       $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
-      } else {
-       $price1 = '<div class="prod-price"><span class="normal-money">Price $'.$price_varient1.'</span></div>';
-      }
-      
-      if( $price_varient1 > 1000 && $product_type1 == 'Equipment') {       
-       $price1 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
-      }
-      
+       
       
          
          
@@ -436,7 +410,33 @@ if(strpos($mystring3, $word6) !== false) {
       
       
 
+     include('condition_for_loop.php');
+        $product_line_items3 = $productss2['product'];  
+       $price_varient1 = $product_line_items3['variants'][0]['price'];
+       $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
+        $first_varientid = $product_line_items3['variants'][0]['id'];
+       //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
       
+      
+     // $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
+    //$productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
+      
+     
+      
+      // $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+      // $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
+      
+      
+        if($price_varient1 < $price_compare_at_price) {
+       $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
+      } else {
+       $price1 = '<div class="prod-price"><span class="normal-money">Price $'.$price_varient1.'</span></div>';
+      }
+      
+      if( $price_varient1 > 1000 && $product_type1 == 'Equipment') {       
+       $price1 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
+      }
+        
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
