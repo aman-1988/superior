@@ -320,13 +320,17 @@ echo '<style>
        //$price_compare_at_price_1 = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
       //echo $price_varient1_1." - ".$price_compare_at_price_1;
       
-       $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
-       $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
+      // $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
+      // $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
-       $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
+        $product_line_items3 = $productss2['product'];  
+       $price_varient1 = $product_line_items3['variants'][0]['price'];
+       $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
+        $first_varientid = $product_line_items3['variants'][0]['id'];
+       //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
       
       
-      $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
+     // $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
     //$productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
       
       include('condition_for_loop.php');
