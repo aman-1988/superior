@@ -506,10 +506,10 @@ if(strpos($mystring3, $word6) !== false) {
             else if($duplicates >= 2) { print_r($result2);   }  
           
          } else if(count($str_arr) == count($result)) {
-             print_r($result2);   $productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
+             print_r($result2); 
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
-             print_r($result2);       $productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
-         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); $productss2 = getorder2("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json"); }
+             print_r($result2);      
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
           
          
           
