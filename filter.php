@@ -215,8 +215,16 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
  function getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)
  {
       
-  
- echo  $result2;
+  if($price_varient1 < $price_compare_at_price) {
+       $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
+      } else {
+       $price1 = '<div class="prod-price"><span class="normal-money">Price $'.$price_varient1.'</span></div>';
+      }
+      
+      if( $price_varient1 > 1000 && $product_type1 == 'Equipment') {       
+       $price1 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
+      }
+ echo  $price1;
   
  }
  
@@ -506,10 +514,10 @@ if(strpos($mystring3, $word6) !== false) {
             else if($duplicates >= 2) { print_r($result2);   }  
           
          } else if(count($str_arr) == count($result)) {
-             print_r($result2); 
+             print_r($result2); getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
-             print_r($result2);      
-         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
+             print_r($result2);      getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid); }
           
          
           
