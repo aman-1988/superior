@@ -441,7 +441,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
       
       //echo $product_line_items[$keys3]['tags']."<br>";
 
-      
+      echo getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
 
          
       if(empty($varientss)) {
