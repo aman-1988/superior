@@ -291,7 +291,7 @@ echo '<style>
      
      
 //$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
- $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&published_scope=global&limit=250");
+ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&published_scope=web&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
