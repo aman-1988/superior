@@ -444,8 +444,8 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
      // echo getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
 
          
-      if(empty($varientss)) {
-        print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));
+        if(empty($varientss)) {
+        print_r($result2);
       }
        else if(!empty($str_arr)) {
              
@@ -473,51 +473,54 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
           
              
          if(count($str_arr) >= 6) {
-             if(count($result) >= count($str_arr)-2) {   print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));  }
-            else if($duplicates >= 1 && count($result) >= 4) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); }
-            else if($duplicates >= 2 && count($result) >= 3) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }
+             if(count($result) >= count($str_arr)-2) {   print_r($result2);  }
+            else if($duplicates >= 1 && count($result) >= 4) { print_r($result2); }
+            else if($duplicates >= 2 && count($result) >= 3) { print_r($result2);   }
          }    
          else if(count($str_arr) == 5) {
             //echo $color_counts1."-";
             //echo $duplicates;
-            if(count($result) >= count($str_arr)-1) {   print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));  }
-            else if($duplicates >= 3) { if(count($result) >= 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); } }
-            else if($color_counts1 >= 2  && $duplicates >= 2) { if(count($result) >= 3) { print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); } }
-            else if($duplicates >= 2) { if(count($result) >= 3) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); } }  
-            else if($duplicates >= 2 && count($result) >= 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }
-            else if($duplicates >= 1 && count($result) >= 3) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); }   
-           else if($duplicates >= 4) { print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $collpath, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); }
+            if(count($result) >= count($str_arr)-1) {   print_r($result2);  }
+            else if($duplicates >= 3) { if(count($result) >= 2) { print_r($result2); } }
+            else if($color_counts1 >= 2  && $duplicates >= 2) { if(count($result) >= 3) { print_r($result2); } }
+            else if($duplicates >= 2) { if(count($result) >= 3) { print_r($result2); } }  
+            else if($duplicates >= 2 && count($result) >= 2) { print_r($result2);   }
+            else if($duplicates >= 1 && count($result) >= 3) { print_r($result2); }   
+           else if($duplicates >= 4) { print_r($result2); }
             
          }
          else if(count($str_arr) == 4)
          {
           //echo $duplicates;      
-             if(count($result) == count($str_arr)) {   print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));  } 
+             if(count($result) == count($str_arr)) {   print_r($result2);  } 
             // else if($color_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
            //  else if($size_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
             // else if($material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
             // else if($color_counts1 >= 1 && $material_counts1 >= 1 && count($result) >= 3) { print_r($result2); }  
-            else if($duplicates >= 2 && count($result) >= 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }
-            else if($duplicates >= 1 && count($result) >= 3) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }
+            else if($duplicates >= 2 && count($result) >= 2) { print_r($result2);   }
+            else if($duplicates >= 1 && count($result) >= 3) { print_r($result2);   }
            else if($duplicates >= 3) { print_r($result2); }
                   
          } 
          else if(count($str_arr) == 3)
          {
           //echo $duplicates;      
-             if(count($result) == count($str_arr)) {   print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));  } 
+             if(count($result) == count($str_arr)) {   print_r($result2);  } 
             // else if($color_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
            //  else if($size_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
             // else if($material_counts1 >= 3 && count($result) >= 2) { print_r($result2); }
             // else if($color_counts1 >= 1 && $material_counts1 >= 1 && count($result) >= 3) { print_r($result2); }         
-             else if($duplicates >= 1 && count($result) >= 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }   
-            else if($duplicates >= 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   }  
+             else if($duplicates >= 1 && count($result) >= 2) { print_r($result2);   }   
+            else if($duplicates >= 2) { print_r($result2);   }  
           
          } else if(count($str_arr) == count($result)) {
-             print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); 
+             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+); 
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
-             print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));   
-         } else if(count($result) == 2 && count($str_arr) == 2) { print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)); }
+             print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+);   
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r(getproductss($SHOPIFY_SHOP, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+); }
           
          
           
@@ -528,7 +531,7 @@ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json
          }
          
          } else {
-             print_r(getproductss($SHOPIFY_SHOP, $collpath, $productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid));
+             print_r($result2);
              
          }
          
