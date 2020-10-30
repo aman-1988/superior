@@ -220,109 +220,8 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
       if( $price_varient1 > 1000 && $product_type1 == 'Equipment') {       
        $price1 = '<span class="Retail">Retail Price</span><span class="money"> $'.$price_varient1.'</span><br><button style="text-color: #FFFFFF;"><span class="email"><a style="color: #FFFFFF;" href="'.$collpath.'/products/'.$handle1.'">Email Me My Price</span></a></button>';
       }
-  
-      $vp_string = strtolower(str_replace(", ", ",",$allproductatgs));
-$strs11 = str_replace(" ", "-", $vp_string);
-$strs22 = str_replace(".", "-", $strs11);
 
- $tagss1 = str_replace("/", "-",$strs22);      
-         $tagsss2 = str_replace('?_', '-_', $tagss1);
-      
-        $tagsss2_1 = str_replace('(', '',$tagsss2);
-        $tagsss2_2 = str_replace(')', '',$tagsss2_1);
-        $tagsss2_3 = str_replace('/', '',$tagsss2_2);
-        $tagsss2_4 = str_replace('-&', '',$tagsss2_3);
-        $tagsss2_5 = str_replace('"', '',$tagsss2_4);
-        // $str_arr2 = explode (",", $tagsss2_5);  
-
-     $tagsss2_6 = ltrim(str_replace("--", "-", $tagsss2_5),"-");
-      
-     //$tagsss2_62 = trim($tagsss2_6,'-');
-      $tagsss2_62 = str_replace('-,', ',',$tagsss2_6);
-      $tagsss2_7 = rtrim($tagsss2_62,"-");
-      
-      $tagsss2_8 = str_replace("'", "",$tagsss2_7);
-      $str_arr2 = explode (",", $tagsss2_8);  
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-         //print_r($str_arr2);
-      
-      $word3 = "RankGood";
-      $word4 = "RankBetter";
-      $word5 = "RankBest";
-      
-      $word6 = "Free Freight";
-      $word7 = "Discounted Freight";
-      $word8 = "QuickShip";
-      $word9 = "LocalDelivery";
-      
-      
-      //$mystring3 = $product_line_items[$keys3]['tags'];
-      $mystring3 = $allproductatgs;
-if(strpos($mystring3, $word3) !== false) {
-    $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
-} else if(strpos($mystring3, $word4) !== false) {
-    $labeltype = '<span style="text-indent:6px; line-height:20px; text-align: center;"class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>';
-} else if(strpos($mystring3, $word5) !== false) {
-    $labeltype = '<span style="text-indent:7px; line-height:20px; text-align: center;"class="variationBest"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Best</p></span>';
-}
-      
-if(strpos($mystring3, $word6) !== false) {
- $labeltype2 = '<div style="margin-bottom:0px;"><div style="font-weight:bold; font-size:18px; color:#6e9674; text-align:left; margin-left:10px;"> Ships Free </div> <img style="width: 70px;height: 40px; position:absolute; margin-top:-40px; margin-left:106px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"></div>';
-}  if(strpos($mystring3, $word8) !== false) {
- $labeltype2 = '<div style="margin-bottom:0px;"><div style="font-weight: bold;font-size: 18px;color:#950c0c"> Quick Ship</div> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
-}  if(strpos($mystring3, $word9) !== false) {
- $labeltype2 = '<div style="margin-top:-8px; height:54px;"><div class="pickup-mobile"> Pickup In Store</div> <img style="position:absolute;margin-top:-70px;width: 120px;height:110px;"  class="pickup-icon-mobile"src="https://marketplace.magento.com/media/catalog/product/cache/7230773f37a543ef738e324844b23ad1/s/t/store-pickup_1.png"><br></div>';
-}  if(strpos($mystring3, $word7) !== false) {
-  $labeltype3 = '<div style="font-weight:bold; font-size:18px; color:#136FF3; text-align:left; margin-left:10px;"> Ships Free </div> <img style="width:70px;height:40px; position: absolute; margin-top:-40px; margin-left:100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br>';
-} else {
-  $labeltype3 = '<div style="visibility:hidden;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
-}
-      
-      
-
-      
-      
-         
-          //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
-      
-      $result2 = '
-<div data-tag="'.htmlspecialchars($allproductatgs).'" class="'.htmlspecialchars($allproductatgs).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
-<div class="prod-border"><div class="prod-container">
-<div class="prod-image"> 
-<a href="'.$collpath.'/products/'.$handle1.'" title="'.htmlspecialchars($protitle2).'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.htmlspecialchars($protitle2).'">
-'.$labeltype.'
-        
-</div></a></div>
-</div>
-<div class="product-info">
- <form method="post" id="targetforms" action="/cart/add">
-      <input type="hidden" name="id" value="'.$first_varientid.'" />
-      <input min="1" type="number" style="margin-bottom:8px;" id="quantity" name="quantity" value="1"/>
-      <input style="background:#950c0c; margin-bottom:8px;" type="submit" value="Add to cart" class="btn" />
-       </form>
-   <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
-<div style="margin-bottom:10px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
-<br>
-'.$labeltype2.' 
-'.$labeltype3.'
-<a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.htmlspecialchars($protitle2).'</p></a></div>
-</div>
-</div>';  
-  
-  
-  
- return $result2;
+ return $price1;
  // print_r($productss2);
   
  }
@@ -377,8 +276,8 @@ echo '<style>
 
      
      
-$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
-// $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+//$productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
+ $productss = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
 //echo "<pre>";
 //print_r($productss);
    $product_line_items = $productss['products'];  
