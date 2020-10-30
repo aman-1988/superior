@@ -214,7 +214,11 @@ $duplicates = count($str_arrs_1) - count($unique_colors);
  
  function getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid)
  {
+   $queries3 = array('query' => 'query { product(id: "'.$admin_graphql_api_id.'") { variants(first:1) { edges { node { compareAtPrice  price } } }    } }');
+   $productss2 = httppost("https://".$SHOPIFY_SHOP."/admin/api/unstable/graphql.json",$queries3);
       
+   $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
+   $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];   
   if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
       } else {
@@ -433,7 +437,7 @@ if(strpos($mystring3, $word6) !== false) {
        </form>
    <p class="ajaxified-cart-feedback success" id="ajaxified'.$first_varientid.'" style="display:none;"><i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a>.</p> 
 
-<div style="margin-bottom:10px;" id="onclickss" class="price">'.$price1.' '.$price2.'</div>
+<div style="margin-bottom:10px;" id="onclickss" class="price">'.getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid).'</div>
 <br>
 '.$labeltype2.' 
 '.$labeltype3.'
@@ -514,10 +518,10 @@ if(strpos($mystring3, $word6) !== false) {
             else if($duplicates >= 2) { print_r($result2);   }  
           
          } else if(count($str_arr) == count($result)) {
-             print_r($result2); getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
+             print_r($result2); 
          } else if(count($result) == 1 && count($str_arr) == 2 && $duplicates >= 1) {
-             print_r($result2);      getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid);
-         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); getproductss($productid2, $protitle2, $proname2, $handle1, $proimgs1, $product_type1, $admin_graphql_api_id, $allproductatgs, $price_varient1, $price_compare_at_price, $first_varientid); }
+             print_r($result2);   
+         } else if(count($result) == 2 && count($str_arr) == 2) { print_r($result2); }
           
          
           
