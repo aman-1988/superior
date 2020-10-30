@@ -1,12 +1,12 @@
 <?php
-   $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
- //$json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+  // $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
+ $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&published_scope=web&limit=250");
    $next_prvious = parsePaginationLinkHeader($json_data10);
    
    $next_info = $next_prvious['next'];
   // echo $next_info;
-    $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?page_info=".$next_info."&limit=250");
-     // $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?page_info=".$next_info."&limit=250");
+    //$json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?page_info=".$next_info."&limit=250");
+      $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?page_info=".$next_info."&limit=250");
     //print_r($json_data);
     $product_line_items = $json_data['products'];  
 
@@ -31,8 +31,15 @@
        // $price_varient1 = $productss2['data']['product']['variants']['edges'][0]['node']['price'];
       //  $price_compare_at_price = $productss2['data']['product']['variants']['edges'][0]['node']['compareAtPrice'];
         
-        $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
-        $price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
+         include('condition_for_loop.php');
+        $product_line_items3 = $productss2['product'];  
+        $price_varient1 = $product_line_items3['variants'][0]['price'];
+        $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
+        $first_varientid = $product_line_items3['variants'][0]['id'];
+       //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
+        
+       // $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
+        //$price_compare_at_price = $product_line_items[$keys3]['variants'][0]['compare_at_price'];
       
       if($price_varient1 < $price_compare_at_price) {
        $price1 = '<div class="onsale">$'.$price1.'</div><div class="was">$'.$price_compare_at_price.'</div>';
@@ -45,7 +52,7 @@
       }
       
       
-         $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
+        // $first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
          
          //$tagss1 = str_replace(" ", "-",strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags'])));
          
@@ -133,7 +140,8 @@ if(strpos($mystring3, $word6) !== false) {
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
-      
+   if(!empty($first_varientid))
+   {
       $result2 = '
 <div data-tag="'.htmlspecialchars($product_line_items[$keys3]['tags']).'" class="'.htmlspecialchars($product_line_items[$keys3]['tags']).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
@@ -157,7 +165,9 @@ if(strpos($mystring3, $word6) !== false) {
 <a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.htmlspecialchars($protitle2).'</p></a></div>
 </div>
 </div>';
-         
+     }
+        
+        
       if(empty($varientss)) {
         print_r($result2);
       }
