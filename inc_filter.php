@@ -8,18 +8,18 @@
     //$json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?page_info=".$next_info."&limit=250");
       $json_data = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?page_info=".$next_info."&limit=250");
     //print_r($json_data);
-    $product_line_items = $json_data['products'];  
+    $product_line_items5 = $json_data['products'];  
 
-     foreach ($product_line_items as $keys3 => $values3)
+     foreach ($product_line_items5 as $keys3 => $values3)
      {
-         $productid2 = $product_line_items[$keys3]['id'];
+         $productid2 = $product_line_items5[$keys3]['id'];
          //$variant_id2 = $product_line_items[$keys3]['variant_id'];
-         $protitle2 = $product_line_items[$keys3]['title'];
-         $proname2 = $product_line_items[$keys3]['name'];
-         $handle1 = $product_line_items[$keys3]['handle'];
-         $proimgs1 = $product_line_items[$keys3]['image']['src'];
-      $product_type1 = $product_line_items[$keys3]['product_type'];
-       $admin_graphql_api_id = $product_line_items[$keys3]['admin_graphql_api_id'];
+         $protitle2 = $product_line_items5[$keys3]['title'];
+         $proname2 = $product_line_items5[$keys3]['name'];
+         $handle1 = $product_line_items5[$keys3]['handle'];
+         $proimgs1 = $product_line_items5[$keys3]['image']['src'];
+      $product_type1 = $product_line_items5[$keys3]['product_type'];
+       $admin_graphql_api_id = $product_line_items5[$keys3]['admin_graphql_api_id'];
                        
         // $productss2 = getorder("https://".$SHOPIFY_SHOP."/admin/api/unstable/products/".$productid2.".json");
          //$product_line_items3 = $productss2['product'];  
@@ -49,7 +49,7 @@
        //  $str_arr2 = explode (",", $tagsss2_5);  
       
       //echo $product_line_items[$keys3]['tags']."<br>";
-      $vp_string = strtolower(str_replace(", ", ",",$product_line_items[$keys3]['tags']));
+      $vp_string = strtolower(str_replace(", ", ",",$product_line_items5[$keys3]['tags']));
 $strs11 = str_replace(" ", "-", $vp_string);
 $strs22 = str_replace(".", "-", $strs11);
 
@@ -95,7 +95,7 @@ $strs22 = str_replace(".", "-", $strs11);
       $word91 = "LocalDelivery";
       
       
-      $mystring3 = $product_line_items[$keys3]['tags'];
+      $mystring3 = $product_line_items5[$keys3]['tags'];
 if(strpos($mystring3, $word31) !== false) {
     $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
 } else if(strpos($mystring3, $word41) !== false) {
@@ -143,7 +143,7 @@ if(strpos($mystring3, $word61) !== false) {
    if(!empty($first_varientid))
    {
       $result2 = '
-<div data-tag="'.htmlspecialchars($product_line_items[$keys3]['tags']).'" class="'.htmlspecialchars($product_line_items[$keys3]['tags']).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
+<div data-tag="'.htmlspecialchars($product_line_items5[$keys3]['tags']).'" class="'.htmlspecialchars($product_line_items5[$keys3]['tags']).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
 <div class="prod-image"> 
 <a href="'.$collpath.'/products/'.$handle1.'" title="'.htmlspecialchars($protitle2).'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.htmlspecialchars($protitle2).'">
