@@ -256,7 +256,8 @@ if(strpos($mystring3, $word61) !== false) {
              
          }
          
-          
+        unset($mystring3);
+       unset($result);  
      }     
 
 
