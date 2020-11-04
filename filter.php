@@ -558,7 +558,9 @@ if(strpos($mystring3, $word6) !== false) {
              
          }
          
-       unset($first_varientid);   
+       unset($first_varientid); 
+       unset($mystring3);
+       unset($result);
        $counter++;
      }     
  
