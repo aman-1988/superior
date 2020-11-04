@@ -263,6 +263,8 @@ if(strpos($mystring3, $word61) !== false) {
        unset($labeltype2);
        unset($labeltype3);
        unset($labeltype);
+        unset($var_inventory_policy);
+      unset($var_inventory_quantity);
        unset($result);  
      }     
 
