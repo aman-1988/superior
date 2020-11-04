@@ -124,6 +124,7 @@ if(strpos($mystring3, $word61) !== false) {
         $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
         $first_varientid = $product_line_items3['variants'][0]['id'];
         $var_inventory_policy = $product_line_items3['variants'][0]['inventory_policy'];
+        $var_inventory_quantity = $product_line_items3['variants'][0]['inventory_quantity'];
        //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
         
        // $price_varient1 = $product_line_items[$keys3]['variants'][0]['price'];
@@ -141,7 +142,7 @@ if(strpos($mystring3, $word61) !== false) {
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
-   if(!empty($first_varientid))
+ if(!empty($first_varientid) && $var_inventory_policy != 'continue' && $var_inventory_quantity >= '0' || !empty($first_varientid) && $var_inventory_policy == 'continue')
    {
      
       $result2 = '
