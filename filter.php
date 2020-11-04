@@ -443,10 +443,10 @@ if(strpos($mystring3, $word62) !== false) {
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
       if(!empty($first_varientid))
      {
-        if(trim($var_inventory_policy) !='deny' ) {
+        
       $result2 = '
 <div data-tag="'.htmlspecialchars($allproductatgs).'" class="'.htmlspecialchars($allproductatgs).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
-<div class="prod-border"><div class="prod-container">
+<div class="prod-border"><div class="prod-container" id="iddd-'.$var_inventory_policy.'">
 <div class="prod-image"> 
 <a href="'.$collpath.'/products/'.$handle1.'" title="'.htmlspecialchars($protitle2).'"><div class="reveal"><img src="'.$proimgs1.'" alt="'.htmlspecialchars($protitle2).'">
 '.$labeltype.'
@@ -469,7 +469,7 @@ if(strpos($mystring3, $word62) !== false) {
 <a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.htmlspecialchars($protitle2).'</p></a></div>
 </div>
 </div>';
-     }  }
+     }  
 
          
       if(empty($varientss)) {
