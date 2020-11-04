@@ -571,6 +571,7 @@ if(strpos($mystring3, $word62) !== false) {
       unset($var_inventory_policy);
       unset($var_inventory_quantity);
        unset($pro_published_at);
+      unset($result2);
        unset($result);
        $counter++;
      }     
