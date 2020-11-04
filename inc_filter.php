@@ -1,6 +1,6 @@
 <?php
   // $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/2020-07/products.json?collection_id=".$name."&published_status=published&limit=250");
- $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&limit=250");
+ $json_data10 = getorder9("https://".$SHOPIFY_SHOP."/admin/api/unstable/collections/".$name."/products.json?sort_order=price-asc&published_scope=web&limit=250");
    $next_prvious = parsePaginationLinkHeader($json_data10);
    
    $next_info = $next_prvious['next'];
