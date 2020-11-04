@@ -376,33 +376,33 @@ $strs22 = str_replace(".", "-", $strs11);
       
          //print_r($str_arr2);
       
-      $word3 = "RankGood";
-      $word4 = "RankBetter";
-      $word5 = "RankBest";
+      $word32 = "RankGood";
+      $word42 = "RankBetter";
+      $word52 = "RankBest";
       
-      $word6 = "Free Freight";
-      $word7 = "Discounted Freight";
-      $word8 = "QuickShip";
-      $word9 = "LocalDelivery";
+      $word62 = "Free Freight";
+      $word72 = "Discounted Freight";
+      $word82 = "QuickShip";
+      $word92 = "LocalDelivery";
       
       
       //$mystring3 = $product_line_items[$keys3]['tags'];
       $mystring3 = $allproductatgs;
-if(strpos($mystring3, $word3) !== false) {
+if(strpos($mystring3, $word32) !== false) {
     $labeltype = '<span style="text-indent:5px; line-height:20px; text-align: center;"class="variation"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Good</p></span>';
-} else if(strpos($mystring3, $word4) !== false) {
+} else if(strpos($mystring3, $word42) !== false) {
     $labeltype = '<span style="text-indent:6px; line-height:20px; text-align: center;"class="variationBetter"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Better</p></span>';
-} else if(strpos($mystring3, $word5) !== false) {
+} else if(strpos($mystring3, $word52) !== false) {
     $labeltype = '<span style="text-indent:7px; line-height:20px; text-align: center;"class="variationBest"><p style="line-height: 18px;font-size: 13px; font-weight: bold;">Best</p></span>';
 }
       
-if(strpos($mystring3, $word6) !== false) {
+if(strpos($mystring3, $word62) !== false) {
  $labeltype2 = '<div style="margin-bottom:0px;"><div style="font-weight:bold; font-size:18px; color:#6e9674; text-align:left; margin-left:10px;"> Ships Free </div> <img style="width: 70px;height: 40px; position:absolute; margin-top:-40px; margin-left:106px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"></div>';
-}  if(strpos($mystring3, $word8) !== false) {
+}  if(strpos($mystring3, $word82) !== false) {
  $labeltype2 = '<div style="margin-bottom:0px;"><div style="font-weight: bold;font-size: 18px;color:#950c0c"> Quick Ship</div> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
-}  if(strpos($mystring3, $word9) !== false) {
+}  if(strpos($mystring3, $word92) !== false) {
  $labeltype2 = '<div style="margin-top:-8px; height:54px;"><div class="pickup-mobile"> Pickup In Store</div> <img style="position:absolute;margin-top:-70px;width: 120px;height:110px;"  class="pickup-icon-mobile"src="https://marketplace.magento.com/media/catalog/product/cache/7230773f37a543ef738e324844b23ad1/s/t/store-pickup_1.png"><br></div>';
-}  if(strpos($mystring3, $word7) !== false) {
+}  if(strpos($mystring3, $word72) !== false) {
   $labeltype3 = '<div style="font-weight:bold; font-size:18px; color:#136FF3; text-align:left; margin-left:10px;"> Ships Free </div> <img style="width:70px;height:40px; position: absolute; margin-top:-40px; margin-left:100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br>';
 } else {
   $labeltype3 = '<div style="visibility:hidden;"><span style="font-weight: bold;font-size: 18px;color:#6e9674"> Ships Free </span> <img style="width: 70px;height: 40px; position: absolute;margin-top: -40px;margin-left: 100px;"src="https://cdn.shopify.com/s/files/1/2304/9095/files/free.png?v=1587666400"><br></div>';
