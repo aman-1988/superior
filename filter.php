@@ -415,6 +415,7 @@ if(strpos($mystring3, $word62) !== false) {
        $price_varient1 = $product_line_items3['variants'][0]['price'];
        $price_compare_at_price = $product_line_items3['variants'][0]['compare_at_price'];
         $first_varientid = $product_line_items3['variants'][0]['id'];
+        $var_inventory_policy = $product_line_items3['variants'][0]['inventory_policy'];
        //$first_varientid = $product_line_items[$keys3]['variants'][0]['id'];
       
       
@@ -440,8 +441,8 @@ if(strpos($mystring3, $word62) !== false) {
       
          
           //$result2 = $handle1. " - $".$price1." - ".$proimgs1;
-      //if(!empty($first_varientid))
-    //  {
+      if(!empty($first_varientid) && $var_inventory_policy != 'deny')
+     {
       $result2 = '
 <div data-tag="'.htmlspecialchars($allproductatgs).'" class="'.htmlspecialchars($allproductatgs).' product-index desktop-3 tablet-2 mobile-half" data-alpha="" data-price="'.$price_varient1.'" style="height:620px;">     
 <div class="prod-border"><div class="prod-container">
@@ -467,7 +468,7 @@ if(strpos($mystring3, $word62) !== false) {
 <a style="text-align:center;color:#003870; font-weight:bold; font-size:16px;" href="'.$collpath.'/products/'.$handle1.'"><p>'.htmlspecialchars($protitle2).'</p></a></div>
 </div>
 </div>';
-   //   }   
+     }   
 
          
       if(empty($varientss)) {
