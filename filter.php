@@ -560,6 +560,9 @@ if(strpos($mystring3, $word62) !== false) {
          
        unset($first_varientid); 
        unset($mystring3);
+       unset($labeltype2);
+       unset($labeltype3);
+       unset($labeltype);
        unset($result);
        $counter++;
      }     
