@@ -267,6 +267,7 @@ if(strpos($mystring3, $word61) !== false) {
        unset($labeltype);
         unset($var_inventory_policy);
       unset($var_inventory_quantity);
+       unset($pro_published_at);
        unset($result);  
      }     
 
